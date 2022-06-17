@@ -1,7 +1,7 @@
 """
 Serializers for user API View
 """
-from tkinter.ttk import Style
+# from tkinter.ttk import Style
 from urllib import request
 from django.contrib.auth import (
     get_user_model,
@@ -22,10 +22,7 @@ class UserSerializer(serializers.ModelSerializer):
 class AuthTokenSerializer(serializers.Serializer):
     """Serializers for the user auth token"""
     email = serializers.EmailField()
-    password = serializers.CharField(
-        Style={'input_type': 'password'},
-        trim_whitespace=False,
-        )
+    password = serializers.CharField()
 
     def validate(self, attrs):
         """Validate and authenticate the user"""
